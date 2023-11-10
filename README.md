@@ -59,11 +59,11 @@ _______
 ## Ingres:
 ![img](https://i.imgur.com/4xIbDXw.png)
 
-│ SL │ PROJECT    │ HOSTNAME │ IP            │ APP_NAME │ HAPROXY_RUNNING │ HAPROXY_PORT │ HLB_IP         │ PUBLIC_IP    │ PUBLIC_URL                  │
-├────┼────────────┼──────────┼───────────────┼──────────┼─────────────────┼──────────────┼────────────────┼──────────────┼─────────────────────────────┤
-│ 1  │ eTransport │ machine1 │ 10.249.221.21 │ App1     │ Yes             │ 80           │ 10.249.221.116 │ 164.100.69.3 │ checkpost.parivahan.gov.in/ │
-├────┼────────────┼──────────┼───────────────┼──────────┼─────────────────┼──────────────┼────────────────┼──────────────┼─────────────────────────────┤
-│ 2  │ eTransport │ machine2 │ 10.249.221.22 │ App2     │ Yes             │ 80           │ 10.249.221.116 │ 164.100.69.3 │ checkpost.parivahan.gov.in/ │
+| SL | PROJECT    | HOSTNAME | IP            | APP_NAME | HAPROXY_RUNNING | HAPROXY_PORT | HLB_IP         | PUBLIC_IP    | PUBLIC_URL                  |
+|----|------------|----------|---------------|----------|-----------------|--------------|----------------|--------------|-----------------------------|
+| 1  | eTransport | machine1 | 10.249.221.21 | App1     | Yes             | 80           | 10.249.221.116 | 164.100.69.3 | checkpost.parivahan.gov.in/ |
+| 2  | eTransport | machine2 | 10.249.221.22 | App2     | Yes             | 80           | 10.249.221.116 | 164.100.69.3 | checkpost.parivahan.gov.in/ |
+
 
 _____________
 
