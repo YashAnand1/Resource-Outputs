@@ -1,5 +1,7 @@
 # IMS Resources
 
+**Note To Harsh Sir**: For visibility of resources, consider opening the images in a new tab.
+
 ## Namespace
 ![img](https://i.imgur.com/muvBhpd.png)
 
