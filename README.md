@@ -65,16 +65,27 @@ _____________
 ![img](https://i.imgur.com/lIMTEtt.png)
 
 
+
 _____________
 
 ## PVC:
 ![img](https://i.imgur.com/UImuooM.png)
+
+| SL | PROJECT    | HOSTNAME | IP            | APP_NAME | WWNN       | OBJECT_STORAGE        | BUCKET_NAME | VG                        | NFS                 | LVM                                    |
+|----|------------|----------|---------------|----------|------------|-----------------------|-------------|---------------------------|---------------------|----------------------------------------|
+| 1  | eTransport | machine1 | 10.249.221.21 | App1     | 32j1wxc231 | objectstorage.nic.com | Check_Post  | /dev/mapper/vg0-lv0:500GB | IP:foldername /u01/ | home, opt, root, swap, tmp, usr, var, var_log_audit, lv0 |
+| 2  | eTransport | machine2 | 10.249.221.22 | App2     | 45a8abc456 | objectstorage.nic.com | Check_Post  | /dev/mapper/vg0-lv0:500GB | IP:foldername /u01/ | home, opt, root, swap, tmp, usr, var, var_log_audit, lv0 |
 
 
 ____________
 
 ## Images:
 ![img](https://i.imgur.com/1Z7UMvP.png)
+
+| SL | PROJECT    | HOSTNAME | IP            | APP_NAME | APP_PLATFORM  | PROGRAMMING_LANGUAGE | PROGRAMMING_LANGUAGE_VERSION | DEPLOYMENT_DEPENDENCIES                             |
+|----|------------|----------|---------------|----------|---------------|-----------------------|-----------------------------|-----------------------------------------------------|
+| 1  | eTransport | machine2 | 10.249.221.22 | App2     | containerised | php                   | 7.2                         | Java, Tomcat, CheckpostApp1                           |
+| 2  | eTransport | machine1 | 10.249.221.21 | App1     | systemd       | Java                  | 1.8                         | Java, Tomcat, CheckpostApp2                           |
 
 
 _________________
@@ -91,5 +102,10 @@ ________________________________
 
 ## service:
 ![img](https://i.imgur.com/yYgEF6u.png)
+
+| SL | PROJECT    | HOSTNAME | IP            | APP_NAME | API_WEBSERVICE_NAME | DATABASE | DB_SERVER_READ     | DB_SERVER_WRITE    | LOCAL_DB_NAME | LOCAL_DB_IP | LISTENING_PORT_LOCAL_DB | OS_SERVICE                                           |
+|----|------------|----------|---------------|----------|---------------------|----------|---------------------|---------------------|---------------|-------------|-------------------------|------------------------------------------------------|
+| 1  | eTransport | machine1 | 10.249.221.21 | App1     | CheckpostWebService | Postgres | 10.246.40.186:5433 | 10.246.40.186:5433 | vow4          | 127.0.0.1   | 5439                    | master, cvd, nimbus(contro, spoole, hdb, proces, cdm), cam, nimbus(logmon |
+| 2  | eTransport | machine2 | 10.249.221.22 | App2     | Checkpost_API       | Postgres | 10.246.40.182:5432 | 10.246.40.186:5433 | vow4          | 127.0.0.1   | 31                      | Master, cvd, nimbus(contro, spoole, cvfwd, zabbix_agentd, logmon, proces, cvfwd, cdm), cam |
 
 ___________________________________
