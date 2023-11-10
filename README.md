@@ -1,4 +1,4 @@
-# IMS Resources
+# Resource Outputs
 
 **Note To Harsh Sir**: For visibility of resources, consider opening the images in a new tab.
 
