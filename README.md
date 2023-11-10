@@ -36,6 +36,12 @@ __________________________
 ## Pods -a:
 ![img](https://i.imgur.com/h3ofiOd.png)
 
+| SL | PROJECT   | HOSTNAME  | IP            | APP_NAME | APP_LAUNCH_DATE | LAST_APP_VERSION | GIT_REPO_URL                         | GIT_ENVIRONMENT | DOCUMENT_TYPE | APP_PLATFORM  | PROGRAMMING_LANGUAGE | PROGRAMMING_LANGUAGE_VERSION | DATABASE | DB_SERVER_READ     | DB_SERVER_WRITE    | LOCAL_DB | Local_DB_NAME | LOCAL_DB_IP | LISTENING_PORT_LOCAL_DB | DEPLOYMENT_DEPENDENCIES            |
+|----|-----------|-----------|---------------|----------|-----------------|-------------------|-------------------------------------|-----------------|----------------|---------------|-----------------------|-----------------------------|----------|-------------------|---------------------|----------|---------------|--------------|-------------------------|-----------------------------------|
+| 1  | eTransport | machine1  | 10.249.221.21 | checkpost | 03-01-2019      | Version_1         | https://gitlab.com/checkpostApp1    | Yes             | Automated     | systemd       | Java                  | 1.8                         | Postgres | 10.246.40.186:5433, 10.246.40.182:5432, 10.242.36.129:5432, 10.242.36.130:5432 | 10.246.40.186:5433 | Yes      | vow4          | 127.0.0.1   | 5439                    | Java<br>Tomcat<br>CheckpostApp2   |
+| 2  | eTransport | machine2  | 10.249.221.22 | checkpost | 03-01-2019      | Version_2         | https://gitlab.com/checkpostApp2    | Yes             | Manual        | containerised | php                   | 7.2                         | Postgres | 10.242.36.129:5432, 10.246.40.182:5432, 10.242.36.129:5432, 10.242.36.130:5432 | 10.242.36.129:5432 | Yes      | vow4          | 127.0.0.1   | 31                      | Java<br>Tomcat<br>CheckpostApp1   |
+
+
 
 _________________
 
@@ -52,6 +58,10 @@ _________
 ## Nodes:
 ![img](https://i.imgur.com/KmHLIeS.png)
 
+| SL | PROJECT   | HOSTNAME  | IP            | APP_NAME | CPU | RAM  | TYPE     | MAC_ADD           | NETMASK           | OS   | OS_VERSION | KERNEL_VERSION      | OS_SERVICE                                     | GATEWAY       | OS_LAST_PATCHED | NTP_SERVER | VM_HYPERVISOR                                     |
+|----|-----------|-----------|---------------|----------|-----|------|----------|-------------------|-------------------|------|------------|---------------------|-------------------------------------------------|---------------|------------------|------------|----------------------------------------------------|
+| 1  | eTransport | machine1  | 10.249.221.21 | checkpost | 8   | 32GB | Physical | 00:00:5e:00:53:af | 255.255.255.128   | RHEL | 7.1        | 4.15.0-46-generic   | master cvd nimbus(contro nimbus(spoole ClMgrS zabbix_agentd cvd nimbus(hdb) nimbus(proces nimbus(cdm) cam nimbus(logmon) | 10.249.221.1  | 22-09-2023       | Yes        | N/A                                                |
+| 2  | eTransport | machine2  | 10.249.221.22 | checkpost | 8   | 64GB | VM       | 00:00:5e:00:53:ac | 255.255.255.128   | RHEL | 7.1        | 5.19.0-46-generic   | Master cvd nimbus(contro nimbus(spoole cvfwd zabbix_agentd cvd nimbus(logmon nimbus(proces cvfwd nimbus(cdm) cam | 10.249.221.2  | 25-09-2023       | Yes        | 10.249.221.22                                      |
 
 
 _______
@@ -70,7 +80,10 @@ _____________
 ## PV:
 ![img](https://i.imgur.com/lIMTEtt.png)
 
-
+| SL    | PROJECT                     | HOSTNAME | IP            | APP_NAME | SAN_DISK  | SAN_PARTITION | LOCAL_DISK | LOCAL_DISK_PARTITION      | PV                                                           |
+|----------------|------------|----------|---------------|----------|-----------|---------------|------------|---------------------------|-------------------------------------------------------------|
+| 1 | eTransport | machine1 | 10.249.221.21 | checkpost | sdb:500GB | /u01:322GB     | sda:105GB | /:20GB /var:9GB /home:10GB /opt:6GB /tmp:10GB /boot:2GB /boot/efi:1GB | PV Name=/dev/sda3 PV Size=101.00g PV Name=/dev/sdb PV Size=500.00g |
+| 2 | eTransport | machine2 | 10.249.221.22 | checkpost | sdb:250GB | /u01:322GB     | sda:105GB   | /:20GB /var:9GB /home:10GB /opt:6GB /tmp:10GB /boot:2GB /boot/efi:1GB | PV Name=/dev/sda3 PV Size=101.00g PV Name=/dev/sdb PV Size=500.00g |
 
 _____________
 
